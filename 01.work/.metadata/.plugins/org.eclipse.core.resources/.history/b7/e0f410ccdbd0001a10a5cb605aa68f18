@@ -1,0 +1,36 @@
+package ex;
+
+public class Lotto {
+
+	public static void main(String[] args){
+		int[] lottoNum = new int[6];
+		
+		//6개 로또 랜덤함수 돌리기~~
+		
+		for(int i = 0; i<lottoNum.length ; i++ ){
+			//1부터 45까지 숫자중에 랜덤함수로 6개
+			lottoNum[i] = (int)(Math.random()*45)+1;
+			
+			//중복함수있는 경우에 다시 돌아가자
+			for(int j = 0 ; i < j ; j++){
+				if(lottoNum[j] == lottoNum[i]){
+					--i;
+					System.out.println("다시 돌아가자");
+				}
+				
+			}//end of inner for
+
+			//차례대로 정리하기
+			if(lottoNum[i-1] > lottoNum[i]){
+				int temp = 0;
+				temp = lottoNum[i];
+				lottoNum[i] = lottoNum[i-1];
+				lottoNum[i-1] = temp;
+			}
+
+			System.out.print(lottoNum[i] + " , ");
+		}//end of for
+
+	
+	}//end of main
+}//end of class
