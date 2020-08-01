@@ -1,0 +1,27 @@
+package practice;
+
+import java.util.Scanner;
+
+public class While {
+
+	public static void main(String[] args){
+		Scanner scan = new Scanner(System.in);
+		
+		while(true){
+
+			int A = 0, B = 0;
+
+			A = scan.nextInt();
+			B = scan.nextInt();
+
+			int sum = 0;
+			
+			sum =  A + B ;
+			
+			System.out.println(sum);
+			
+			if (sum == 0) break; 
+		}
+		
+	}
+}

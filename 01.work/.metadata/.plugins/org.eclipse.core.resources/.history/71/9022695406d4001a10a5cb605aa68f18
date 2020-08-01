@@ -1,0 +1,23 @@
+package practice;
+
+import java.util.Scanner;
+
+public class While {
+
+	public static void main(String[] args){
+		Scanner scan = new Scanner(System.in);
+		
+		int A = 0, B = 0;
+		
+		
+		while(A == 0 && B == 0){
+
+			A = scan.nextInt();
+			B = scan.nextInt();
+			
+			System.out.println(A + B);
+			
+		}
+		
+	}
+}
