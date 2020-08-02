@@ -1,0 +1,67 @@
+package practice;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Scanner;
+
+public class If {
+	
+	int avg = 0, temp = 0, sum = 0, i = 0;
+	
+	Scanner scan = new Scanner(System.in);
+	
+	public int If_test(){
+		
+		int arry[] = new int[5];
+		
+		for(i = 0 ; i < 5 ; i++){
+		
+			arry[i] = scan.nextInt();
+			if(arry[i] < 40) arry[i] = 40;
+			sum += arry[i];
+		}//end of for
+		avg = sum/5;
+		
+		return avg;
+	}
+	
+	
+	public int If_test2(){
+		
+		int arry_b[] = new int[3];
+		int arry_s[] = new int[2];
+		
+		for(i=0; i<5 ; i++){
+			
+			if(i<3)arry_b[i] = scan.nextInt();
+			else arry_s[i] = scan.nextInt();
+
+		}
+
+		
+		Arrays.sort(arry_b);
+		Arrays.sort(arry_s);
+		
+		System.out.println(arry_b[0] + " : " + arry_s[0]);
+		
+		sum = arry_b[0] + arry_s[0] - 50;
+	
+		return sum;
+	}
+	
+	public static void main(String[] args){
+		
+		If it = new If();
+		int result = 0;
+		
+//		result = it.If_test();
+//		System.out.println(result);
+
+		result = it.If_test2();
+		System.out.println(result);
+				
+		
+		
+	}// end of main
+
+}//end of class

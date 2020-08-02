@@ -1,0 +1,33 @@
+package practice;
+
+import java.util.Scanner;
+
+public class If {
+	
+	public static void main(String[] args){
+		
+		int avg = 0, temp = 0, sum = 0;
+		
+		Scanner scan = new Scanner(System.in);
+		
+		int arry[] = new int[5];
+		
+		for(int i = 0 ; i < 5 ; i++){
+		
+			arry[i] = scan.nextInt();
+			
+			if(arry[i] < 40){
+				arry[i] = 40;
+			}
+			
+			sum += arry[i];
+			
+		}
+		
+		avg = sum/5;
+		
+		System.out.println(avg);
+		
+	}
+
+}

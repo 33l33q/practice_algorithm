@@ -1,0 +1,114 @@
+package practice;
+//10952¹ø
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+
+public class While {
+
+	public static void main(String[] args){
+//		Scanner scan = new Scanner(System.in);
+//
+//		int A = 0, B = 0;
+//
+//		
+//		while(scan.hasNext()){
+//
+//			A = scan.nextInt();
+//			B = scan.nextInt();
+//
+//			System.out.println(A + B);
+//		}//end of while 
+//		
+		
+//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+//		
+//		try{
+//
+//			int a,b = 0;
+//			String s = "";
+//			
+//			while(s != null){
+//				
+//				s = br.readLine();
+//				
+//				String arry[] = s.split(" ");
+//					
+//				a = Integer.parseInt(arry[0]);
+//				b = Integer.parseInt(arry[1]);
+//				
+//				System.out.println(a + b);
+//
+//			}
+//		
+//			bw.flush();
+//			bw.close();
+//			
+//		}catch(Exception e){
+//			
+//		}
+//
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		try{
+			bw.write("1");
+			int a = 0 , b = 0 , c = 0 , d = 0, e = 0;
+			bw.write("2");
+			String s = "";
+			bw.write("3");
+			
+			s = br.readLine();
+			bw.write("4");
+			String[] arry = new String[2];
+			arry[0] = s.substring(0,1);
+			arry[1] = s.substring(1);
+
+			bw.write("arry[0] >>>> " + arry[0] + "arry[1] >>>> " + arry[1]);
+			
+			e = Integer.parseInt(s);
+			
+			while(true){
+				
+				if(arry[1] == null){
+					a = 0;
+					b = Integer.parseInt(arry[0]);
+					
+				}else{
+					a = Integer.parseInt(arry[0]);
+					b = Integer.parseInt(arry[1]);
+					
+					bw.write("a >>>> " + a + "b >>>> " + b);
+				}
+				
+				c = a + b;
+				bw.write(a + " : " + b + " = " + c);
+				
+				d++;
+				
+				arry[0] = Integer.toString(b);
+				arry[1] = Integer.toString(c);
+				
+				bw.write(s);
+				
+				if(e == c) break;
+				
+			}//end of while
+			
+			bw.write(d);
+			
+			bw.flush();
+			bw.close();
+			
+		}catch(Exception x){
+			
+			x.printStackTrace();
+			
+		}
+		
+		
+	}//end of main
+}//end of class

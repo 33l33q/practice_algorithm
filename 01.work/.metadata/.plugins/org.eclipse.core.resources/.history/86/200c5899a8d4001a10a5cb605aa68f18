@@ -1,0 +1,91 @@
+package practice;
+//10952¹ø
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+
+public class While {
+
+	public static void main(String[] args){
+//		Scanner scan = new Scanner(System.in);
+//
+//		int A = 0, B = 0;
+//
+//		
+//		while(scan.hasNext()){
+//
+//			A = scan.nextInt();
+//			B = scan.nextInt();
+//
+//			System.out.println(A + B);
+//		}//end of while 
+//		
+		
+//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+//		
+//		try{
+//
+//			int a,b = 0;
+//			String s = "";
+//			
+//			while(s != null){
+//				
+//				s = br.readLine();
+//				
+//				String arry[] = s.split(" ");
+//					
+//				a = Integer.parseInt(arry[0]);
+//				b = Integer.parseInt(arry[1]);
+//				
+//				System.out.println(a + b);
+//
+//			}
+//		
+//			bw.flush();
+//			bw.close();
+//			
+//		}catch(Exception e){
+//			
+//		}
+//
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		int a, b, c = 0;
+		String s = "";
+		
+		try{
+			
+//			while(){
+				
+				s = br.readLine();
+				
+				if(s.length() == 1){
+					a = 0;
+					b = Integer.parseInt(s.substring(0));
+					
+				}else{
+					a = Integer.parseInt(s.substring(0));
+					b = Integer.parseInt(s.substring(1));
+					
+					System.out.println("a >>>> " + a + "b >>>> " + b);
+					
+				}
+				
+				System.out.println( a + b);
+				
+//			}//end of while
+			
+			
+			
+			
+		}catch(Exception e){
+			
+		}
+		
+		
+	}//end of main
+}//end of class
