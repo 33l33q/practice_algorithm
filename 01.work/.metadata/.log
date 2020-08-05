@@ -1860,3 +1860,600 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.jdt.core 4 4 2020-08-03 00:08:51.257
+!MESSAGE Exception occurred during compilation unit conversion:
+----------------------------------- SOURCE BEGIN -------------------------------------
+package practice;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class If {
+	
+	int avg = 0, a = 0, sum = 0, i = 0, j = 0;
+	
+	Scanner scan = new Scanner(System.in);
+	
+	public int If_test(){
+		
+		int arry[] = new int[5];
+		
+		for(i = 0 ; i < 5 ; i++){
+		
+			arry[i] = scan.nextInt();
+			if(arry[i] < 40) arry[i] = 40;
+			sum += arry[i];
+		}//end of for
+		avg = sum/5;
+		
+		return avg;
+	}
+	
+	
+	public int If_test2(){
+		
+		int arry_b[] = new int[3];
+		int arry_s[] = new int[2];
+		
+		for(i=0; i<5 ; i++){
+			
+			if(i<3)arry_b[i] = scan.nextInt();
+			else arry_s[i-3] = scan.nextInt();
+
+		}
+
+		
+		Arrays.sort(arry_b);
+		Arrays.sort(arry_s);
+		
+		System.out.println(arry_b[0] + " : " + arry_s[0]);
+		
+		sum = arry_b[0] + arry_s[0] - 50;
+	
+		return sum;
+	}
+	
+	public int If_test3(){
+		
+		int arry[] = new int[3];
+		
+		for(i=0; i<3 ; i++){
+			
+			arry[i] = scan.nextInt();
+
+		}
+		
+		Arrays.sort(arry);
+		
+	
+		a = arry[1];
+		
+		return a;
+	}
+
+
+	public void Star_test(){
+		
+		a = scan.nextInt();
+		sum = (2*a)-1;
+		
+		for(i = 0 ; i <= sum ; i++ ){
+			if(i < a ){
+				for(j = 0 ; j <= i ; j++){
+					System.out.print("*");
+				}
+			}else{
+				for(j = 1 ; j <= (sum-i) ; j++){
+					System.out.print("*" );
+				}
+			}
+			System.out.println("" );
+		}
+		
+	}
+	
+	public void Star_test2(){
+		
+		a = scan.nextInt();
+		
+		sum = (2*a)-1;
+		
+		for(i = 0 ; i < sum ; i++){
+
+			if(i <= a - 1){
+				for(j = 0 ; j < i ; j++){
+					System.out.print(" ");
+				}
+				
+				for(j = 0 ; j < sum - (2*i) ; j++){
+					System.out.print("*");
+				}
+			}else{
+				
+				for(j = 0 ; j < sum - i - 1 ; j++){
+					System.out.print(" ");
+				}
+				
+				for(j = 0 ; j <= (2*i) - sum + 1 ; j++){
+					System.out.print("*");
+				}
+				
+			}
+			
+			System.out.println("");
+			
+		}
+		
+	}
+	
+
+	public void Star_test3(){
+		a = scan.nextInt();
+		
+		if(a == 1){
+			System.out.print("*");
+		}else if(a>1){
+			for(i = 0 ; i < a*2 ; i++){
+				if(i%2==0){
+					for(j = 0; j < a ; j++){
+						if(j%2==0)System.out.print("*");
+						else System.out.print(" ");
+					}
+				}else if(i%2 != 0){
+					for(j = 0; j < a ; j++){
+						if(j%2==0) System.out.print(" ");
+						else System.out.print("*");
+					}
+				}
+					System.out.println("");
+			}//end of for
+				
+				
+		}//end of else if
+	}
+
+	public void Using_builder() throws Exception{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+	
+		a = Integer.parseInt(br.readLine());
+		
+		StringBuilder sb = new StringBuilder();
+		
+		for(i=0;i<a;i++){
+			if(i%2==0) sb.append("*");
+			else sb.append(" ");
+		}
+		
+		sb.append("\n");
+		
+		for(i=0;i<a;i++){
+			if(i%2!=0) sb.append("*");
+			else sb.append(" ");
+		}
+		
+		sb.append("\n");
+		
+		String str = sb.toString();
+		
+		for(i = 1 ; i < a ; i++){
+			sb.append(str);
+		}
+		
+		System.out.println(sb);
+	
+	}
+	
+	public static void main(String[] args){
+		
+		If it = new If();
+		int result = 0;
+		
+//		result = it.If_test();
+//		System.out.println(result);
+
+//		result = it.If_test3();
+//		System.out.println(result);
+		
+//		it.Star_test3();
+		
+		try[]
+		it.Using_builder();
+				
+		
+		
+	}// end of main
+
+}//end of class
+
+----------------------------------- SOURCE END -------------------------------------
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2845)
+	at org.eclipse.jdt.core.dom.ASTConverter.setTypeAnnotationsAndSourceRangeOnArray(ASTConverter.java:3420)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToArray(ASTConverter.java:3166)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertType(ASTConverter.java:3628)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToVariableDeclarationStatement(ASTConverter.java:3439)
+	at org.eclipse.jdt.core.dom.ASTConverter.checkAndAddMultipleLocalDeclaration(ASTConverter.java:454)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:633)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:195)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2958)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1374)
+	at org.eclipse.jdt.core.dom.AST.convertCompilationUnit(AST.java:270)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:202)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:259)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:579)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1082)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:171)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:90)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:729)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:789)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1247)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:126)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:108)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:89)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:87)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:151)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:86)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:104)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+
+!ENTRY org.eclipse.jdt.ui 4 2 2020-08-03 00:08:51.262
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.ui".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2845)
+	at org.eclipse.jdt.core.dom.ASTConverter.setTypeAnnotationsAndSourceRangeOnArray(ASTConverter.java:3420)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToArray(ASTConverter.java:3166)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertType(ASTConverter.java:3628)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToVariableDeclarationStatement(ASTConverter.java:3439)
+	at org.eclipse.jdt.core.dom.ASTConverter.checkAndAddMultipleLocalDeclaration(ASTConverter.java:454)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:633)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:195)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2958)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1374)
+	at org.eclipse.jdt.core.dom.AST.convertCompilationUnit(AST.java:270)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:202)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:259)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:579)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1082)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:171)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:90)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:729)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:789)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1247)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:126)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:108)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:89)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:87)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:151)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:86)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:104)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+
+!ENTRY org.eclipse.jdt.ui 4 0 2020-08-03 00:08:51.265
+!MESSAGE Error in JDT Core during reconcile
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2845)
+	at org.eclipse.jdt.core.dom.ASTConverter.setTypeAnnotationsAndSourceRangeOnArray(ASTConverter.java:3420)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToArray(ASTConverter.java:3166)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertType(ASTConverter.java:3628)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToVariableDeclarationStatement(ASTConverter.java:3439)
+	at org.eclipse.jdt.core.dom.ASTConverter.checkAndAddMultipleLocalDeclaration(ASTConverter.java:454)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:633)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:195)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2958)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1374)
+	at org.eclipse.jdt.core.dom.AST.convertCompilationUnit(AST.java:270)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:202)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:259)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:579)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1082)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:171)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:90)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:729)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:789)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1247)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:126)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:108)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:89)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:87)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:151)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:86)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:104)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+
+!ENTRY org.eclipse.jdt.core 4 4 2020-08-03 00:08:51.452
+!MESSAGE Exception occurred during compilation unit conversion:
+----------------------------------- SOURCE BEGIN -------------------------------------
+package practice;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class If {
+	
+	int avg = 0, a = 0, sum = 0, i = 0, j = 0;
+	
+	Scanner scan = new Scanner(System.in);
+	
+	public int If_test(){
+		
+		int arry[] = new int[5];
+		
+		for(i = 0 ; i < 5 ; i++){
+		
+			arry[i] = scan.nextInt();
+			if(arry[i] < 40) arry[i] = 40;
+			sum += arry[i];
+		}//end of for
+		avg = sum/5;
+		
+		return avg;
+	}
+	
+	
+	public int If_test2(){
+		
+		int arry_b[] = new int[3];
+		int arry_s[] = new int[2];
+		
+		for(i=0; i<5 ; i++){
+			
+			if(i<3)arry_b[i] = scan.nextInt();
+			else arry_s[i-3] = scan.nextInt();
+
+		}
+
+		
+		Arrays.sort(arry_b);
+		Arrays.sort(arry_s);
+		
+		System.out.println(arry_b[0] + " : " + arry_s[0]);
+		
+		sum = arry_b[0] + arry_s[0] - 50;
+	
+		return sum;
+	}
+	
+	public int If_test3(){
+		
+		int arry[] = new int[3];
+		
+		for(i=0; i<3 ; i++){
+			
+			arry[i] = scan.nextInt();
+
+		}
+		
+		Arrays.sort(arry);
+		
+	
+		a = arry[1];
+		
+		return a;
+	}
+
+
+	public void Star_test(){
+		
+		a = scan.nextInt();
+		sum = (2*a)-1;
+		
+		for(i = 0 ; i <= sum ; i++ ){
+			if(i < a ){
+				for(j = 0 ; j <= i ; j++){
+					System.out.print("*");
+				}
+			}else{
+				for(j = 1 ; j <= (sum-i) ; j++){
+					System.out.print("*" );
+				}
+			}
+			System.out.println("" );
+		}
+		
+	}
+	
+	public void Star_test2(){
+		
+		a = scan.nextInt();
+		
+		sum = (2*a)-1;
+		
+		for(i = 0 ; i < sum ; i++){
+
+			if(i <= a - 1){
+				for(j = 0 ; j < i ; j++){
+					System.out.print(" ");
+				}
+				
+				for(j = 0 ; j < sum - (2*i) ; j++){
+					System.out.print("*");
+				}
+			}else{
+				
+				for(j = 0 ; j < sum - i - 1 ; j++){
+					System.out.print(" ");
+				}
+				
+				for(j = 0 ; j <= (2*i) - sum + 1 ; j++){
+					System.out.print("*");
+				}
+				
+			}
+			
+			System.out.println("");
+			
+		}
+		
+	}
+	
+
+	public void Star_test3(){
+		a = scan.nextInt();
+		
+		if(a == 1){
+			System.out.print("*");
+		}else if(a>1){
+			for(i = 0 ; i < a*2 ; i++){
+				if(i%2==0){
+					for(j = 0; j < a ; j++){
+						if(j%2==0)System.out.print("*");
+						else System.out.print(" ");
+					}
+				}else if(i%2 != 0){
+					for(j = 0; j < a ; j++){
+						if(j%2==0) System.out.print(" ");
+						else System.out.print("*");
+					}
+				}
+					System.out.println("");
+			}//end of for
+				
+				
+		}//end of else if
+	}
+
+	public void Using_builder() throws Exception{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+	
+		a = Integer.parseInt(br.readLine());
+		
+		StringBuilder sb = new StringBuilder();
+		
+		for(i=0;i<a;i++){
+			if(i%2==0) sb.append("*");
+			else sb.append(" ");
+		}
+		
+		sb.append("\n");
+		
+		for(i=0;i<a;i++){
+			if(i%2!=0) sb.append("*");
+			else sb.append(" ");
+		}
+		
+		sb.append("\n");
+		
+		String str = sb.toString();
+		
+		for(i = 1 ; i < a ; i++){
+			sb.append(str);
+		}
+		
+		System.out.println(sb);
+	
+	}
+	
+	public static void main(String[] args){
+		
+		If it = new If();
+		int result = 0;
+		
+//		result = it.If_test();
+//		System.out.println(result);
+
+//		result = it.If_test3();
+//		System.out.println(result);
+		
+//		it.Star_test3();
+		
+		try[]
+		it.Using_builder();
+				
+		
+		
+	}// end of main
+
+}//end of class
+
+----------------------------------- SOURCE END -------------------------------------
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2845)
+	at org.eclipse.jdt.core.dom.ASTConverter.setTypeAnnotationsAndSourceRangeOnArray(ASTConverter.java:3420)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToArray(ASTConverter.java:3166)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertType(ASTConverter.java:3628)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToVariableDeclarationStatement(ASTConverter.java:3439)
+	at org.eclipse.jdt.core.dom.ASTConverter.checkAndAddMultipleLocalDeclaration(ASTConverter.java:454)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:633)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:195)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2958)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1374)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:292)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1209)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:809)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:544)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:537)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:480)
+	at org.eclipse.jdt.ui.SharedASTProvider.getAST(SharedASTProvider.java:128)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:170)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$3.run(SelectionListenerWithASTManager.java:155)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jdt.ui 4 2 2020-08-03 00:08:51.455
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.ui".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2845)
+	at org.eclipse.jdt.core.dom.ASTConverter.setTypeAnnotationsAndSourceRangeOnArray(ASTConverter.java:3420)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToArray(ASTConverter.java:3166)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertType(ASTConverter.java:3628)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToVariableDeclarationStatement(ASTConverter.java:3439)
+	at org.eclipse.jdt.core.dom.ASTConverter.checkAndAddMultipleLocalDeclaration(ASTConverter.java:454)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:633)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:195)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2958)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1374)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:292)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1209)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:809)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:544)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:537)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:480)
+	at org.eclipse.jdt.ui.SharedASTProvider.getAST(SharedASTProvider.java:128)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:170)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$3.run(SelectionListenerWithASTManager.java:155)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jdt.ui 4 0 2020-08-03 00:08:51.457
+!MESSAGE Error in JDT Core during AST creation
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2845)
+	at org.eclipse.jdt.core.dom.ASTConverter.setTypeAnnotationsAndSourceRangeOnArray(ASTConverter.java:3420)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToArray(ASTConverter.java:3166)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertType(ASTConverter.java:3628)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToVariableDeclarationStatement(ASTConverter.java:3439)
+	at org.eclipse.jdt.core.dom.ASTConverter.checkAndAddMultipleLocalDeclaration(ASTConverter.java:454)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:633)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:195)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2958)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1374)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:292)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1209)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:809)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:544)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:537)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:480)
+	at org.eclipse.jdt.ui.SharedASTProvider.getAST(SharedASTProvider.java:128)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:170)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$3.run(SelectionListenerWithASTManager.java:155)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)

@@ -1,8 +1,7 @@
 package practice;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class If {
@@ -127,7 +126,9 @@ public class If {
 	public void Star_test3(){
 		a = scan.nextInt();
 		
-
+		if(a == 1){
+			System.out.print("*");
+		}else if(a>1){
 			for(i = 0 ; i < a*2 ; i++){
 				if(i%2==0){
 					for(j = 0; j < a ; j++){
@@ -143,39 +144,8 @@ public class If {
 					System.out.println("");
 			}//end of for
 				
-
-	}
-
-	public void Using_builder() throws Exception{
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		
-	
-		a = Integer.parseInt(br.readLine());
-		
-		StringBuilder sb = new StringBuilder();
-		
-		for(i=0;i<a;i++){
-			if(i%2==0) sb.append("*");
-			else sb.append(" ");
-		}
-		
-		sb.append("\n");
-		
-		for(i=0;i<a;i++){
-			if(i%2!=0) sb.append("*");
-			else sb.append(" ");
-		}
-		
-		sb.append("\n");
-		
-		String str = sb.toString();
-		
-		for(i = 1 ; i < a ; i++){
-			sb.append(str);
-		}
-		
-		System.out.println(sb);
-	
+				
+		}//end of else if
 	}
 	
 	public static void main(String[] args){
@@ -190,12 +160,7 @@ public class If {
 //		System.out.println(result);
 		
 		it.Star_test3();
-		
-//		try{
-//			it.Using_builder();
-//		}catch(Exception e){
-//			
-//		}		
+				
 		
 		
 	}// end of main

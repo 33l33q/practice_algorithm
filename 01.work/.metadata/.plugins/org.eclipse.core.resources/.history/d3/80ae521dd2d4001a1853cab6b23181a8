@@ -127,7 +127,9 @@ public class If {
 	public void Star_test3(){
 		a = scan.nextInt();
 		
-
+		if(a == 1){
+			System.out.print("*");
+		}else if(a>1){
 			for(i = 0 ; i < a*2 ; i++){
 				if(i%2==0){
 					for(j = 0; j < a ; j++){
@@ -143,7 +145,8 @@ public class If {
 					System.out.println("");
 			}//end of for
 				
-
+				
+		}//end of else if
 	}
 
 	public void Using_builder() throws Exception{
@@ -190,12 +193,7 @@ public class If {
 //		System.out.println(result);
 		
 		it.Star_test3();
-		
-//		try{
-//			it.Using_builder();
-//		}catch(Exception e){
-//			
-//		}		
+				
 		
 		
 	}// end of main

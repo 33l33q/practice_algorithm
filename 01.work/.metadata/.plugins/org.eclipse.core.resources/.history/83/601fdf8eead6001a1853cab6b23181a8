@@ -152,7 +152,7 @@ public class If {
 	
 		a = Integer.parseInt(br.readLine());
 		
-		StringBuilder sb = new StringBuilder();
+		StringBuffer  sb = new StringBuffer();
 		
 		for(i=0;i<a;i++){
 			if(i%2==0) sb.append("*");
