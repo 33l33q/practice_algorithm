@@ -1,0 +1,33 @@
+package practice;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class ArraTest {
+
+	public static void main(String[] args){
+		
+		Scanner scan = new Scanner(System.in);
+		
+		int maxNum = 0; //가장 큰 수
+		int maxNo = 0;	//가장 큰 수의 번호
+		int[] iArray = new int[9];
+		HashMap hm = new HashMap<int,int>();
+			
+			
+			for(int i = 0; i < 9; i++){
+				iArray[i] = scan.nextInt();
+				hm.put(iArray[i], i++);
+				System.out.println(iArray[i]);
+			}
+			
+			Arrays.sort(iArray);
+			
+			maxNum = iArray[0];
+			
+			maxNo = (int)hm.get(maxNum);
+			System.out.println("maxNum >>> " + maxNum + ", maxNo>>> " + maxNo);
+			
+	}
+}
