@@ -2,40 +2,81 @@ package practice;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.HashSet;
 //백준 2577
 public class ArraTest {
 
 	public static void main(String[] args){
 		
-		
+
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
-		int[] rArray = new int[10];
-		int result = 0;
+		int[] iArray = new int[10];
+		int count = 10 ;
 		
 		try{
-			
-			result = Integer.parseInt(br.readLine()) * Integer.parseInt(br.readLine()) * Integer.parseInt(br.readLine());
-			
-			String str = String.valueOf(result);
-			
-			for(int i = 0 ; i < str.length() ; i++){
-				rArray[str.charAt(i) - 48]++;
-				//-48 혹은 - '0'을 해주지 않으면 그냥 아스키코드 값이 들어가버림으로 유의할 것 
+			for(int i = 0 ; i < iArray.length ; i++){
+				iArray[i] = Integer.parseInt(br.readLine()) % 42;
+				
+				for(int j = 0 ; j < i ; j++){
+					if(iArray[i] == iArray[j]){
+						count--;
+						break;
+					}
+				}
 			}
 			
-			//변형for문
-			//list나 ArrayList에서 사용하는 방법으로
-			//j에 rArray의 값이 끝날때까지 순차적으로 넣어주는 것
-			for(int j : rArray)	System.out.println(j);
+			System.out.println(count);
 			
 		}catch(Exception e){
-			e.getMessage();
+			
 		}
+		
+		
+//해쉬셋 쓰기
+//		HashSet<Integer> hs = new HashSet<Integer>(); 
+//		
+//		try{
+//			
+//			for(int i = 0 ; i < 10 ; i++){
+//				hs.add(Integer.parseInt(br.readLine()) % 42);
+//			}
+//			
+//			for(int s : hs){
+//				System.out.println(s);
+//			}
+//			
+//			
+//		}catch(Exception e){
+//		
+//			e.getMessage();
+//		}
+		
+		
+//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//		
+//		int[] rArray = new int[10];
+//		int result = 0;
+//		
+//		try{
+//			
+//			result = Integer.parseInt(br.readLine()) * Integer.parseInt(br.readLine()) * Integer.parseInt(br.readLine());
+//			
+//			String str = String.valueOf(result);
+//			
+//			for(int i = 0 ; i < str.length() ; i++){
+//				rArray[str.charAt(i) - 48]++;
+//				//-48 혹은 - '0'을 해주지 않으면 그냥 아스키코드 값이 들어가버림으로 유의할 것 
+//			}
+//			
+//			//변형for문
+//			//list나 ArrayList에서 사용하는 방법으로
+//			//j에 rArray의 값이 끝날때까지 순차적으로 넣어주는 것
+//			for(int j : rArray)	System.out.println(j);
+//			
+//		}catch(Exception e){
+//			e.getMessage();
+//		}
 		
 		//내가 푼 방법
 //		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
