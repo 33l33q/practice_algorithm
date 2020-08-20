@@ -2,87 +2,48 @@ package practice;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.StringTokenizer;
-//백준 1546번
+import java.util.Scanner;
+//백준 8958번
 public class ArraTest {
 
 	public static void main(String[] args){
 		
-		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		
-		double m = 0.0; //최댓값
-		double s = 0.0;//다 더해진 값
-		double arg = 0.0; //평균값
-		int iNum = 0; //길이
+		int iNum = 0;
+		String[] iArray ;
+		int[] cnt;
+		int count = 0;
 		try{
-			
-			iNum = (Integer.parseInt(br.readLine()));
-		
-			double nArray[] = new double[iNum];
-			
-			String sArray[] = br.readLine().split(" ");
-			
-			for(int i = 0 ; i < nArray.length ; i++){
-				nArray[i] = Double.parseDouble(sArray[i]);
-				
-				if(nArray[i]>m){
-					m = nArray[i];
-				}
-			}
-			
-			for(int j = 0 ; j < nArray.length ; j++){
-				s += nArray[j] / m * 100;
-				
-			}
-			
-			arg = s / iNum;
-		
-			System.out.println(arg);
+			 iNum = Integer.parseInt(br.readLine());
+			 iArray = new String[iNum];
+			 cnt = new int[iNum];
+			 System.out.println(iNum);
+			 
+			 for(int i = 0 ; i < iArray.length; i++){
+				 iArray[i] = br.readLine();
+				 
+				 String str = null;
+				 str = iArray[i];
+				 cnt[i] = 0;
+				 count = 0;
+				 System.out.println(str);
+				 for(int j = 0; j < str.length(); j++){
+					 if(Character.toString(str.charAt(j)).equals("O")){
+						 cnt[i] += ++count;
+						 System.out.println(str.charAt(j) + " >>>> " + cnt[i]);
+					 }else{
+						 count = 0;
+					 }
+					 
+			 	}
+			 }
+			 
+			 for(int result : cnt){
+				 System.out.println(result);
+			 }
 			
 		}catch(Exception e){
 			e.getMessage();
 		}
-		
 	}
 }
-
-
-//
-//
-//iNum = (Integer.parseInt(br.readLine()));
-//
-////스플릿사용법
-////numbers = br.readLine();
-////String sArray[] = numbers.split("");
-//
-//double nArray[] = new double[iNum];
-//
-//StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-//
-//for(int i = 0 ; i < nArray.length ; i++){
-//	nArray[i] = Double.parseDouble(st.nextToken());
-//	System.out.println("nArray[i]   >>> " + nArray[i]);
-//}
-//
-//Arrays.sort(nArray);
-//
-//m = nArray[nArray.length - 1];
-//System.out.println(m);
-//
-//for(int j = 0 ; j < nArray.length ; j++){
-//	s += nArray[j] / m * 100;
-//	System.out.println("nArray["+j+"]   >>> " + s + " : " + nArray[j]);
-//	
-//}
-//
-//arg = s / iNum;
-//
-//System.out.println("arg >>>> " +arg);
-//
-//}catch(Exception e){
-//e.getMessage();
-//}
-//
-//}

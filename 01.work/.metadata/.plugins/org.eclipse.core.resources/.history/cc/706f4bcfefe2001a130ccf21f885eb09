@@ -1,0 +1,50 @@
+package practice;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+//น้มุ 1546น๘
+public class ArraTest {
+
+	public static void main(String[] args){
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int iNum = 0;
+		String[] iArray ;
+		int cnt = 0;
+		
+		try{
+			 iNum = Integer.parseInt(br.readLine());
+			 iArray = new String[iNum];
+			 System.out.println(iArray);
+			 
+			 for(int i = 0 ; i < iArray.length ; i++){
+				 iArray[i] = br.readLine();
+				 
+				 String str = null;
+				 str = iArray[i];
+				 
+				 for(int j = 0; j < str.length(); j++){
+					 System.out.println(str.charAt(j));
+					 if(str.charAt(j)==79){
+						 if(str.charAt(j-1)==79){
+							 while(str.charAt(j)==79){
+								 cnt += cnt + 1 ;
+								 System.out.println(cnt);
+							 }
+						 }else{
+							 cnt += 1;
+							 System.out.println(cnt);
+						 }
+					 }
+					 
+				 }
+				 
+			 }
+			 
+			
+		}catch(Exception e){
+			e.getMessage();
+		}
+	}
+}
