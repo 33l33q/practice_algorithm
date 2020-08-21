@@ -1,0 +1,51 @@
+package practice;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+import java.util.StringTokenizer;
+//백준 8958번
+public class ArraTest {
+
+	public static void main(String[] args){
+		BufferedReader  br = new BufferedReader(new InputStreamReader(System.in));
+		int mNum = 0;//전체 갯수
+		int cNum = 0;//케이스 번호
+		double[] dArray = null;
+		double sum = 0.0;
+		double avg = 0.0;
+		String[] sArray = null;
+		
+		try{
+			
+			mNum = Integer.parseInt(br.readLine());
+			System.out.println("총 케이스 갯수 >>> " + mNum);
+			sArray = new String[mNum];
+			dArray = new double[mNum];
+			
+			for(int i = 0; i < sArray.length ; i++){
+				
+				sArray[i] = br.readLine();
+				System.out.println("sArray["+i+"] 진입 >>> " + sArray[i]);
+				StringTokenizer st = new StringTokenizer(br.readLine());
+				
+				cNum = Integer.parseInt(st.nextToken(sArray[i]));
+				System.out.println("cNum 값 >>> " + cNum);
+				for(int j = 1 ; j <= cNum ; j++){
+					sum += Double.parseDouble(st.nextToken(sArray[j]));
+				}//end of for j
+				dArray[i] = (Math.round((sum/cNum)*1000))/1000;
+				
+			}//end of for i
+			
+			for(double s : dArray){
+				System.out.println(s + "%" );				
+			}
+			
+		}catch(Exception e){
+			e.getMessage();
+		}
+		
+		
+	}//end of main
+}

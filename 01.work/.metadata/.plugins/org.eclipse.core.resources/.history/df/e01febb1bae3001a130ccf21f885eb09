@@ -1,0 +1,44 @@
+package practice;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+import java.util.StringTokenizer;
+//백준 8958번
+public class ArraTest {
+
+	public static void main(String[] args){
+		BufferedReader  br = new BufferedReader(new InputStreamReader(System.in));
+		int mNum = 0;//전체 갯수
+		int cNum = 0;//케이스 번호
+		double[] dArray = null;
+		double sum = 0.0;
+		double avg = 0.0;
+		String[] sArray = null;
+		
+		try{
+			
+			mNum = Integer.parseInt(br.readLine());
+			
+			sArray = new String[mNum];
+			
+			
+			for(int i = 0; i < sArray.length ; i++){
+				sArray[i] = br.readLine();
+				
+				StringTokenizer st = new StringTokenizer(" ");
+				
+				cNum = Integer.parseInt(st.nextToken(sArray[i]));
+				
+				
+				
+			}//end of for i
+			
+			
+		}catch(Exception e){
+			
+		}
+		
+		
+	}//end of main
+}

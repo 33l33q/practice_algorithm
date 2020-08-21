@@ -1,0 +1,42 @@
+package practice;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+//백준 8958번
+public class ArraTest {
+
+	public static void main(String[] args){
+		BufferedReader  br = new BufferedReader(new InputStreamReader(System.in));
+		int mNum = 0;//전체 갯수
+		int cNum = 0;//케이스 번호
+		double[] dArray = null;
+		String[] sArray = null;
+		
+		try{
+			
+			mNum = Integer.parseInt(br.readLine());
+			
+			sArray = new String[mNum];
+			
+			
+			for(int i = 0; i < dArray.length ; i++){
+				dArray[i] = Double.parseDouble(br.readLine());
+				
+				String str = D dArray[i];
+				
+				
+				for(int j = 0 ; j < dArray[i]){
+					
+				}
+				
+			}
+			
+			
+		}catch(Exception e){
+			
+		}
+		
+		
+	}//end of main
+}

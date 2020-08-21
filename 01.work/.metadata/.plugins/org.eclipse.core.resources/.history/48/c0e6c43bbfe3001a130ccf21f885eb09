@@ -2,8 +2,10 @@ package practice;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.text.Format;
+import java.util.Scanner;
 import java.util.StringTokenizer;
-//백준 4344번
+//백준 8958번
 public class ArraTest {
 
 	public static void main(String[] args){
@@ -20,33 +22,44 @@ public class ArraTest {
 		try{
 			
 			mNum = Integer.parseInt(br.readLine());
+			System.out.println("총 케이스 갯수 >>> " + mNum);
 			sArray = new String[mNum];
 			result = new double[mNum];
 			
 			for(int i = 0; i < sArray.length ; i++){
 				
 				sArray[i] = br.readLine();
+				System.out.println("sArray["+i+"] 진입 >>> " + sArray[i]);
 				StringTokenizer st = new StringTokenizer(sArray[i]);
 				
 				cNum = Integer.parseInt(st.nextToken(" ")); //해당 케이스의 인원수
+				
+				System.out.println("cNum 값 >>> " + cNum);
 				
 				dArray = new double[cNum];
 				
 				for(int j = 0 ; j < cNum ; j++){
 					dArray[j] = Double.parseDouble(st.nextToken(" "));
+					System.out.println("dArray["+j+"] 값 >>> " + dArray[j]);
+					
 					sum += dArray[j];
+					System.out.println("sum 값 >>> " + sum);
 				}
 				
 				avg = sum/cNum;
+				System.out.println("avg 값 >>> " + avg);
 				
 				for(int j = 0 ; j < cNum ; j++){
 					if(dArray[j] > avg){
 						cnt++;
+						System.out.println("------------dArray["+j+"] 값 >>> " + dArray[j]);
+						System.out.println("cnt 값 >>> " + cnt);
 					}
 				}//end of for j
 				
 //				result[i] = (Math.round(((cnt*100)/cNum)*1000))/1000.0;
 				result[i] = (cnt*100)/cNum;
+				System.out.println("result 값 >>> " + result[i]);
 				
 				sum = 0;
 				avg = 0;
@@ -54,6 +67,8 @@ public class ArraTest {
 			}//end of for i
 			
 			for(double d : result){
+				
+				
 				System.out.println(String.format("%.3f", d) + "%");
 			}
 			
