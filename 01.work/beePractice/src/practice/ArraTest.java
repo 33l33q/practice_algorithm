@@ -54,7 +54,7 @@ public class ArraTest {
 			}//end of for i
 			
 			for(double d : result){
-				System.out.println(String.format("%.3f", d) + "%");
+				System.out.println(String.format("%.3f", d));
 			}
 			
 		}catch(Exception e){
