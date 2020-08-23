@@ -39,6 +39,7 @@ public class MethodTest {
 			
 		} //end of for		
 		
+		
 		for(int b : aList){
 			System.out.println(b);
 		}

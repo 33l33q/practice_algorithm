@@ -1,11 +1,13 @@
 package practice;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MethodTest {
 
-	public void mTest(){
+	public static void main(String[] args) {
 
+		int tArray[] = new int[10000];
 		int iArray[] = null;
 		ArrayList<Integer> aList = new ArrayList<Integer>();
 		
@@ -28,10 +30,10 @@ public class MethodTest {
 			}
 			
 			sum = sum + i;
+
 			
 			if(sum <= 10000){
-				Object obj = sum;
-				aList.remove(obj);
+				aList.remove(sum);
 			}
 			
 			sum = 0;
@@ -39,17 +41,11 @@ public class MethodTest {
 			
 		} //end of for		
 		
+		
 		for(int b : aList){
 			System.out.println(b);
 		}
 
-	}
-	
-	public static void main(String[] args) {
-
-		MethodTest mt = new MethodTest();
-		
-		mt.mTest();
 		
 	}//end of main
 

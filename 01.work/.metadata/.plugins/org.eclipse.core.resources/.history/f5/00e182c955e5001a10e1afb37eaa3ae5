@@ -1,19 +1,17 @@
 package practice;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MethodTest {
 
-	public void mTest(){
+	public static void main(String[] args) {
 
+		int tArray[] = new int[10000];
 		int iArray[] = null;
-		ArrayList<Integer> aList = new ArrayList<Integer>();
+		ArrayList<Integer> aList = new ArrayList();
 		
 		int sum = 0;
-		
-		for(int a = 1 ; a <= 10000 ; a++){
-			aList.add(a);
-		}
 		
 		for(int i = 0 ; i < 10000 ; i++){
 			String str = Integer.toString(i);
@@ -28,28 +26,31 @@ public class MethodTest {
 			}
 			
 			sum = sum + i;
+			tArray[i] = sum;
 			
-			if(sum <= 10000){
-				Object obj = sum;
-				aList.remove(obj);
+			
+			
+			for(int a = 1 ; a <= 1000 ; a++){
+				if( i != tArray[a]){
+					aList.add(i);
+				}
+				
 			}
-			
+	
 			sum = 0;
 			iArray = null;
 			
-		} //end of for		
-		
-		for(int b : aList){
-			System.out.println(b);
-		}
+		} //end of for
 
-	}
-	
-	public static void main(String[] args) {
-
-		MethodTest mt = new MethodTest();
+		System.out.print(aList.get(1001));
 		
-		mt.mTest();
+//		for(int p : aList){
+//			System.out.println(p);
+//		}
+		
+
+		
+		
 		
 	}//end of main
 

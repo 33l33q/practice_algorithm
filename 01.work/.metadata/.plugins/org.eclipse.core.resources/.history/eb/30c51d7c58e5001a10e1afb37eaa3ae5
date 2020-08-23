@@ -6,6 +6,7 @@ public class MethodTest {
 
 	public void mTest(){
 
+		int tArray[] = new int[10000];
 		int iArray[] = null;
 		ArrayList<Integer> aList = new ArrayList<Integer>();
 		
@@ -39,6 +40,7 @@ public class MethodTest {
 			
 		} //end of for		
 		
+		
 		for(int b : aList){
 			System.out.println(b);
 		}
@@ -47,9 +49,6 @@ public class MethodTest {
 	
 	public static void main(String[] args) {
 
-		MethodTest mt = new MethodTest();
-		
-		mt.mTest();
 		
 	}//end of main
 
