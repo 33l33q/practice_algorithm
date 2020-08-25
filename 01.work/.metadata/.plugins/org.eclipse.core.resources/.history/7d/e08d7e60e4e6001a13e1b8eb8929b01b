@@ -1,0 +1,47 @@
+package practice;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class MethodTest {
+
+
+	public static void main(String args[]){
+
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		try{
+			int iVal = 0, cnt = 1;
+			String sVal = null;
+			int[] iArray = null;
+			int[] dArray= new int[2];
+			
+
+			if(sVal.length() == 1 || sVal.length() ==  2 ){
+				cnt = Integer.parseInt(sVal);
+			}else{
+			
+				for(int i = 0 ; i < sVal.length() ; i++){
+					iArray = new int[sVal.length()];
+					iArray[i] = sVal.charAt(i) - 48;
+		
+				}
+				
+				dArray[0] = iArray[0] - iArray[1];
+				dArray[1] = iArray[1] - iArray[2];
+					
+				if(dArray[0] == dArray[1]) cnt++;
+				
+			}
+			
+			System.out.println(cnt);
+
+		
+		}catch(Exception e){
+			
+		}
+		
+	}//end of main
+
+}//end of class
+

@@ -1,0 +1,40 @@
+package practice;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class MethodTest {
+
+
+	public static void main(String args[]){
+
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		try{
+			int iVal = 0, cnt = 1, n = 0;
+			String sVal = null;
+			int[] iArray = null;
+			int[] dArray= new int[2];
+
+			//숫자의 총 크기만큼 돌아서
+			//각 숫자를 어레이 담아서
+			//숫자 빼기 숫자 만큼
+			
+			sVal = br.readLine();
+			
+			if(sVal.length() == 1 ,sVal.length() ==  2) ) cnt = Integer.parseInt(sVal);
+			else if(sVal.length() == 3 )
+
+				
+			
+			System.out.println(cnt);
+
+		
+		}catch(Exception e){
+			
+		}
+		
+	}//end of main
+
+}//end of class
+
