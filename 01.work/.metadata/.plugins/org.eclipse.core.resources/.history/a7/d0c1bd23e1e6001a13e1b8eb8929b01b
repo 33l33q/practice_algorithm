@@ -1,0 +1,36 @@
+package practice;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+
+public class MethodTest {
+
+	public void mTest1(){
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in) );
+		
+		try{
+			int iVal = 0, result = 0;
+			iVal = Integer.parseInt(br.readLine());
+			
+			result = (int)((Math.random() * iVal) + 1);
+		
+		
+		}catch(Exception e){
+			
+		}
+	}
+
+	
+	public static void main(String[] args) {
+
+		
+		
+		MethodTest mt = new MethodTest();
+		
+		
+	}//end of main
+
+}//end of class
+
